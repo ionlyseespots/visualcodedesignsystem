@@ -1,4 +1,4 @@
-# Simple
+# Visual Code Design System
 
 > Visual Code Design System - starting with a template to align CSS with the HTML to create visual structure
 
