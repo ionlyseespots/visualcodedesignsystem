@@ -4,146 +4,173 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 		<title>Visual Code Design system</title>
 <style>
 * { margin: 0; padding: 0; }
-html { 
+html {
     font-size: 2vmin;
 }
-body { 
-	display: -webkit-box;     
-  	display: -moz-box;        
-  	display: -ms-flexbox;     
-  	display: -webkit-flex;     
-  	display: flex; 
-	flex-direction: column;  
-	-webkit-flex-direction: column;   
-	-moz-flex-direction: column; 
-	-ms-flex-direction: column;    
-	min-width: calc(100vw - 1vw);
-	min-height: calc(100vh - 1vh);
-	overflow-x: hidden; }
-body > article  {
-	margin: auto;
-	width: auto; }
+body {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    min-width: calc(100vw - 1vw);
+    min-height: calc(100vh - 1vh);
+    overflow-x: hidden;}
 body > header {
-	width:calc(100vw - 1vw);
-	display: -webkit-box;     
-  	display: -moz-box;        
-  	display: -ms-flexbox;     
-  	display: -webkit-flex;     
-  	display: flex;    
-	flex-direction: row;
+    width:calc(100vw - 1vw);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
     flex-flow: row wrap;
-	-webkit-flex-flow: row wrap;
-	-moz-flex-flow: row wrap;
-	-ms-flex-flow: row wrap; }
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap; }
+body > header h1 {
+    text-align: center;
+}
+body > header h1, body > header h2, body > header h3 {
+    text-align: center;
+    width: 100vw;}
+body > header p  {
+    text-align: center;
+    width: 100vw; }
+body > article  {
+    margin: auto;
+    width: auto; }
 h1 {
-  	font-size: 4vh; }
+    font-size: 4vh; }
 h2{
-   	font-size: 3.5vh; }
+    font-size: 3.5vh; }
 h3{
-   	font-size: 3vh; }
+    font-size: 3vh; }
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #eee -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-right: 0 none;
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    clear: both; }
 article {
-	display: -webkit-box;     
-  	display: -moz-box;        
-  	display: -ms-flexbox;     
-  	display: -webkit-flex;     
-  	display: flex;             
-  	flex-direction: row;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
     flex-flow: row wrap;
-	-webkit-flex-flow: row wrap;
-	-moz-flex-flow: row wrap;
-	-ms-flex-flow: row wrap;  
-	width:calc(100vw - 1vw); }
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    width:calc(100vw - 1vw); }
 article > h1, header > h1 {
-  	width: 100vw; }
+    width: 100vw; }
 article > p {
-	width: 100vw; }	
+    width: 100vw; }
 section{
-  	-webkit-flex: 1;
+    -webkit-flex: 1;
     -moz-flex: 1;
     -ms-flex: 1;
-	flex: 1; }
+    flex: 1; }
 section article {
-	width: 99.5%;
-	margin: auto; }
+    width: 99.5%;
+    margin: auto; }
 main {
-	flex: 1;
-  	-webkit-flex: 1;
-    -moz-flex: 1;
-    -ms-flex: 1; 
-	padding-right: 1vw; }
-main > article:first-of-type > section:first-of-type {
-	display: -webkit-box;     
-  	display: -moz-box;     
-  	display: -ms-flexbox;      
-  	display: -webkit-flex;    
-  	display: flex;         
-  	order: 1;
-  	-webkit-order: 1
-  	-moz-order: 1;
-  	-ms-order: 1; }
-main > article:first-of-type section:first-of-type aside {
-  	flex: 0 0 20vw;
-	-webkit-flex: 0 0 20vw;
-	-moz-flex: 0 0 20vw;
-	-ms-flex: 0 0 20vw;	}
-main > article:first-of-type section:first-of-type aside:last-of-type {
-	order:-1; 
-	-webkit-order: -1; 
-	-moz-order: -1; 
-	-ms-order: -1; }
-main > article:first-of-type {
-	flex-direction: column;	
-	-webkit-flex-direction: column; 
-	-moz-flex-direction: column; }  	
-nav {
-	order: -1; 
-	-webkit-order: -1; 
-	-moz-order: -1; 
-	-ms-order: -1; 
-	width: 100vw; }
-nav ul {	  
-	display: -webkit-box;     
-  	display: -moz-box;         
-  	display: -ms-flexbox;      
-  	display: -webkit-flex;    
-  	display: flex;            
-   	flex-direction: row;
-    flex-flow: row wrap;
-	-webkit-flex-flow: row wrap;
-	-moz-flex-flow: row wrap;
-	-ms-flex-flow: row wrap;  
-	list-style-type: none;
-	padding: 0;
-	margin: 0; }
-nav ul li {  	
-	-webkit-flex: 1;    
-	text-align: center;
+    flex: 1;
+    -webkit-flex: 1;
     -moz-flex: 1;
     -ms-flex: 1;
-	flex: 1; }   	
+    padding-right: 1vw; }
+article header {
+    width:calc(100vw - 1vw);
+}
+section header {width: auto;}
+article.multi-column > section:first-of-type {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    order: 1;
+    -webkit-order: 1
+-moz-order: 1;
+    -ms-order: 1; }
+article.multi-column section:first-of-type aside {
+    flex: 0 0 20vw;
+    -webkit-flex: 0 0 20vw;
+    -moz-flex: 0 0 20vw;
+    -ms-flex: 0 0 20vw;	}
+article.multi-column section:first-of-type aside:last-of-type {
+    order:-1;
+    -webkit-order: -1;
+    -moz-order: -1;
+    -ms-order: -1; }
+article.multi-column {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column; }
+nav {
+    order: -1;
+    -webkit-order: -1;
+    -moz-order: -1;
+    -ms-order: -1;
+    width: 100vw; }
+nav ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+nav ul li {
+    -webkit-flex: 1;
+    text-align: center;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
 footer {
-	width:  calc(100vw - 1vw);
-	order: 2; 
-	-webkit-order: 2; 
-	-moz-order: 2; 
-	-ms-order: 2; 
-	padding: .01vw; }
-	
-/* defualt single column strucuture on portrait */	
+    width:  calc(100vw - 1vw);
+    order: 2;
+    -webkit-order: 2;
+    -moz-order: 2;
+    -ms-order: 2;
+    padding: .01vw; }
+
+/* defualt single column strucuture on portrait */
 @media (orientation:portrait){
-	html { 
-    	font-size: 3.5vmin;
+    html {
+        font-size: 3.5vmin;
     }
-	article {
-		flex-direction: column;
-		-webkit-box-orient: vertical;
-		-webkit-flex-direction: column;
+    article {
+        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
     }
     main > article:first-of-type section:first-of-type {
-    	display: block;
+        display: block;
     }
 }
 
@@ -188,16 +215,13 @@ body > footer {background-color:#404040; color: #fff;}
 		</header>
 			<article>
 				<div>
-					First [article] not in [main] is centered on page
+					First [article] not in [main] is centered in the view
 				</div>
 			</article>
 		<main role="main">
-			<article>
+			<article class="multi-column">
 				<header role="contentinfo">
 					<h1>Article Header H1</h1>
-					<p>
-						First [section] + [aside] nested within a [section] displays  holy grail multi-column: 80/20, or 20/40/20 layout
-					</p>
 				</header>
 				<section>
 					<section>
