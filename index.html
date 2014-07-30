@@ -1,12 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+        "http://www.w3.org/TR/html4/strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-		<title>Visual Code Design system</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
 <style>
+
 * { margin: 0; padding: 0; }
 html {
     font-size: 2vmin;
@@ -174,270 +175,533 @@ footer {
     }
 }
 
-/* temporary rules to illustrate layout */
 
-body, section  {background-color: #F4F2F0; font-family: "PT Sans", sans-serif;line-height: 1.5;}
-body > article {margin: 1vw auto;}
-section {}
-article  {background-color: #EAE6E3; }
-header, footer {background-color: #E1DCD7; }
-aside {background-color: #fff;}
-p, article {margin: .5vw 0;}
-article {border: 1px solid #d6d6d6;}
-section {border-left: 1px solid #d6d6d6; border-right: 1px solid #d6d6d6;}
-nav  {background-color:#404040;}
-nav li {padding: .5vw;}
-nav a {color: #fff; text-decoration: none;}
-body > footer, body > header {padding: 0; }
-body > footer {background-color:#404040; color: #fff;}
+/* custom rules */
+body {font-family: "PT Sans", sans-serif; line-height: 1.42857;}
+body > header {
+    color:#F77564;
+    background-color: #303638;
 
+}
+body > footer {  color:#F77564;
+    background-color: #303638;padding-top: 6vw; padding-bottom: 6vw;text-align: center;}
+body > header h1, body > header h2 {
+    color: #fff;
+
+}
+
+body > header a {
+    color: rgba(255,255,255,.5);
+    text-decoration: none;
+    transition: all .15s linear;
+}
+body > header a:hover {
+    color: #fff;
+}
+
+body > article  {
+    background-color: #303638; }
+
+
+a {
+
+    color: #428bca;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+    margin: 0 0 .5rem;
+    font-weight: normal;
+    line-height: 1;
+    color: #2a2a2a;
+    letter-spacing: -.05em;
+}
+
+
+
+ul, ol {padding-left: 2.5vw;}
+article {border-bottom: 1px solid #e1e1e1;}
+main header { background-color: #F77564;padding: 4vw 0 4vw 2.5vw;}
+article section header, section header { background-color:transparent;padding: 0;}
+
+section {padding: 2.5vw;}
+
+body > header {padding-bottom: 6vw;}
+body > header h1 {margin-top: 6vw;}
+blockquote {
+    background: none repeat scroll 0 0 rgba(247, 247, 247, 0.56);
+    border-left: 3px solid #5bc4be;
+    border-radius: 0 6px 6px 0;
+    color: #666;
+    font-style: italic;
+    margin: 10px 0;
+    padding: 1rem;
+}
+
+
+pre {
+    background-color: #eee;
+    border: 1px solid #fff;
+}
+
+.window-gui {
+    background: none repeat scroll 0 0 #ffffff;
+    border-radius: 6px 6px 0 0;
+    border-top: 1em solid #999999;
+    padding: 0.618em;
+
+}
+
+code {
+    background-color: #eee;
+    border-radius: 4px;
+    color: #c7254e;
+    font-size: 90%;
+    padding: 2px 4px;
+
+}
+
+.landscape-gui {    display: flex;}
+.window-gui section {padding: 0;width: auto;}
+.window-gui p {  background-color: #eee;
+    border: 1px solid #fff;text-align: center;}
+.multi-column header, .multi-column footer {background-color:#EEEEEE;padding: 2.5vw 0 2.5vw 2.5vw;}
+.multi-column section {background-color:#F4F2F0;padding: 0;}
+.multi-column section section {background-color:#F7F7F9;padding: 2.5vw;}
+.multi-column aside {background-color: #fff; padding: 2.5vw;}
+.multi-column footer {padding: 2.5vw; ;}
+.highlight {background-color: #f7f7f9;}
 </style>
-	</head>
-	<body>
-		<header role="banner">
-			<h1>Main Header H1 displays below [nav]</h1>
-			<p>
-				[nav] [li] is centered and the amount of [li] tags define the amount of columns in [nav]
-			</p>
-			<nav role="navigation">
-				<ul>
-					<li>
-						<a href="#">[nav] [li]</a>
-					</li>
-					<li>
-						<a href="#">[nav] [li]</a>
-					</li>
-					<li>
-						<a href="#">[nav] [li]</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
-			<article>
-				<div>
-					First [article] not in [main] is centered in the view
-				</div>
-			</article>
-		<main role="main">
-			<article class="multi-column">
-				<header role="contentinfo">
-					<h1>Article Header H1</h1>
-				</header>
-				<section>
-					<section>
-						<h1>Article Section Section H2</h1>
-			            <p>
-							One [aside] tag displays 80/20 layout
-						</p>
-						<p>
-							Two [aside] tags display 20/40/20 layout
-						</p>
-					</section>
-					<aside>
-						<h2>Article Section Aside H2</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-						</p>
-					</aside>
-					<aside>
-						<h2>Article Section Aside H2</h2>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-						</p>
-					</aside> 
-				</section>
-				<footer>
-						<h3>Article Footer H3</h3>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cumenatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-						</p>
-				</footer>
-			</article>
-			<article>
-				<h1>Article H1</h1>
-				<p>
-					Each [section] displays full-height, even when content does not fill the space
-				</p>
-				<p>
-					The amount of [section] tags defines the amount of columns
-				</p>
-			</article>
-			<article>
-				<h1>Article H1</h1>
-				<section>
-						<h2>Article Section H2</h2>
-					<p>
-						1/2
-					</p>
-					<article>
-						<h1>Nested Article H1</h1>
-						<section>
-							<h2>Nested Article Section H2</h2>
-							<p>
-								1/3	
-							</p>
-						</section>
-						<section>
-							<h2>Nested Article Section H2</h2>
-							<p>
-								1/3	
-							</p>
-						</section>
-						<section>
-							<h2>Nested Article Section H2</h2>
-							<p>
-								1/3	
-							</p>
-						</section>
-					</article>
-				</section>
-				<section>
-					<h2>Article Section H2</h2>
-					<p>
-						1/2
-					</p>
-				</section>
-			</article>
-			<article>
-				<h1>Article H1</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-				</p>
-				<section>
-					<header>
-						<h2>Article Section Header H2</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-				</p>
-					</header>
-						<p>
-							1/3	
-						</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/3
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/3
-					</p>
-				</section>
-				<footer>
-					<h3>Article Footer H3</h3>
-					<p>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-					</p>
-				</footer>
-			</article>
-			<article>
-				<h1>Article H1</h1>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/4
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/4
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/4
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/4
-					</p>
-				</section>
-			</article>
-			<article>
-				<h1>Article Heading 1</h1>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/5
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/5
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/5
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/5
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/5
-					</p>
-				</section>
-			</article>
-			<article>
-				<h1>Article Heading 1</h1>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/6
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-					1/6
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/6
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/6
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/6
-					</p>
-				</section>
-				<section>
-					<h3>Article Section H3</h3>
-					<p>
-						1/6
-					</p>
-				</section>
-			</article>
-		</main>
-		<footer>
-			<h3>Main Footer H3</h3>
-			<p>
-			Sticky Footer</p>
-		</footer>
-	</body>
+
+</head>
+<body>
+<header>
+    <h1>Visual Code Design System</h1>
+    <p>A system for the principles of design to align CSS with HTML and allow the structure to define the page layout.</p>
+    <nav role="navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="vcds.html">Full Template</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </nav>
+</header>
+<main role="main">
+<article>
+    <header>
+        <h2>Outline</h2>
+    </header>
+    <section>
+        <h3><a href="#html">Visual</a></h3>
+        <ul>
+            <li><a href="#name">Lorem Ipsum</a></li>
+            <li><a href="#name">Lorem Ipsum</a></li>
+            <li><a href="#name">Lorem Ipsum</a></li>
+        </ul>
+    </section>
+    <section>
+        <h3><a href="#html">HTML</a></h3>
+        <ul>
+            <li><a href="#name">Lorem Ipsum</a></li>
+            <li><a href="#name">Lorem Ipsum</a></li>
+            <li><a href="#name">Lorem Ipsum</a></li>
+        </ul>
+    </section>
+    <section>
+        <h3><a href="#css">CSS</a></h3>
+        <ul>
+            <li><a href="#name">Lorem Ipsum</a></li>
+            <li><a href="#name">Lorem Ipsum</a></li>
+            <li><a href="#name">Lorem Ipsum</a></li>
+        </ul>
+    </section>
+    <section>
+        <h3><a href="#html">System</a></h3>
+        <ul>
+            <li><a href="#name">Lorem Ipsum</a></li>
+            <li><a href="#name">Lorem Ipsum</a></li>
+            <li><a href="#name">Lorem Ipsum</a></li>
+        </ul>
+    </section>
+</article>
+<article>
+    <section>
+        <h2>position:</h2>
+        <code> static|absolute|fixed|relative|initial|inherit;</code>
+        <hr />
+        <p>The position of this system is to establish a visual system for the structure of the HTML to define the page layout. For additions or contributions, please <a href="">say howdy</a>.</p>
+    </section>
+    <section class="highlight">
+        <blockquote>
+            <p>Visual + Code + Design + System</p>
+        </blockquote>
+    </section>
+</article>
+<header>
+    <h2>HTML</h2>
+</header>
+<article>
+    <section>
+        <h3><a style="text-decoration: underline;" href="http://uxmyths.com/post/2059998441/myth-28-white-space-is-wasted-space">White Space</a></h3>
+        <p style="margin-bottom: 3rem;">The space that is not occupied by text, images, or other visible elements.
+            Responsible for readability, it also plays an important role in the layout.</p>
+        <h3>Syntax</h3>
+        <ul>
+            <li>Use soft tabs with two spaces for consistent indentation of your markup.</li>
+            <li>Tab nested elements once.</li>
+            <li>Use double quotes on attributes.</li>
+            <li>Do not include a trailing slash in self-closing elements.</li>
+            <li>Do not omit optional closing tags.</li>
+        </ul>
+    </section>
+    <section class="highlight">
+        <div style="background-color:#303638; padding: 2rem;margin-bottom: 15px;">
+            <div style="margin-bottom:5px; height: 25px;background-color:#CD500D; max-width:80%; margin-right: 40%;"></div>
+            <div style="margin-bottom: 5px;height: 25px;background-color:#CD500D; max-width: 60%;margin-left: 20%;margin-right: 20%;"></div>
+            <div style="margin-bottom:5px;height: 25px;background-color:#CD500D; max-width: 100%;margin-left: 40%;"></div>
+            <div style="margin-bottom:5px;height: 25px;background-color:#CD500D; max-width: 100%;margin-left: 40%;"></div>
+            <div style="margin-bottom:5px;height: 25px;background-color:#CD500D; max-width: 60%;margin-left: 20%;margin-right: 20%;"></div>
+        </div>
+             <pre><code>
+                 &lt;!DOCTYPE html>
+                 &lt;html>
+                 &lt;head>
+                 &lt;title>Page title&lt;/title>
+                 &lt;/head>
+                 &lt;body>
+                 &lt;h1 class="hello-world">Hello, world!&lt;/h1>
+                 &lt;/body>
+                 &lt;/html>
+             </code></pre>
+    </section>
+</article>
+<article>
+    <section>
+        <h3>HTML5 doctype</h3>
+        <p>Enforce standards mode and more consistent rendering in every browser possible with this simple doctype at the beginning of every HTML page</p>
+    </section>
+    <section class="highlight">
+            <pre><code>
+                &lt;!DOCTYPE html>
+                &lt;html>
+                &lt;head>
+                &lt;/head>
+                &lt;/html>
+            </code></pre>
+    </section>
+</article>
+<article>
+    <section>
+        <h3>Language attribute</h3>
+        <p>From the HTML5 spec:</p>
+        <blockquote>
+            Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.
+        </blockquote>
+        <p>
+            Read more about the
+            <code>lang</code>
+            attribute<a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element">in the spec</a>.
+        </p>
+    </section>
+    <section class="highlight">
+            <pre><code>
+                &lt;!DOCTYPE html>
+                &lt;html lang="en-us">
+                &lt;/html>
+            </code></pre>
+    </section>
+</article>
+<article>
+    <section>
+        <h3>Character encoding</h3>
+        <p>Quickly and easily ensure proper rendering of your content by declaring an explicit character encoding. When doing so, you may avoid using character entities in your HTML, provided their encoding matches that of the document (generally UTF-8).</p>
+    </section>
+    <section class="highlight">
+            <pre><code>
+                &lt;head>
+                &lt;meta charset="UTF-8">
+                &lt;/head>
+            </code></pre>
+    </section>
+</article>
+
+<article>
+    <section>
+        <h3>Attribute order</h3>
+        <ul>
+            <li><code>class</code></li>
+            <li><code>id</code>, <code>name</code></li>
+            <li><code>data-*</code></li>
+            <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code></li>
+            <li><code>title</code>, <code>alt</code></li>
+            <li><code>aria-*</code>, <code>role</code></li>
+        </ul>
+    </section>
+    <section class="highlight">
+            <pre><code>
+                &lt;a class="..." id="..." data-modal="toggle" href="#">
+                Example link
+                &lt;/a>
+
+                &lt;input class="form-control" type="text">
+
+                &lt;img src="..." alt="...">
+            </code></pre>
+    </section>
+</article>
+<article>
+    <section>
+        <h3>Code + Design</h3>
+        <p>Strive to maintain code standards but not at the expense of design patterns. Think modularity.</p>
+    </section>
+</article>
+<article>
+    <section>
+        <h3>Layout</h3>
+        <p>These HTML5 tags define the visual layout without the need for structure based classes.</p>
+        <code>Main</code>, <code>Article</code>, <code>Section</code>,  <code>Aside</code>, <code>Header</code>,  <code>Nav</code>, <code>Footer</code>, <code>H1</code>, <code>H2</code>, <code>H3</code>
+    </section>
+    <section class="highlight">
+            <pre><code>
+
+            </code></pre>
+    </section>
+</article>
+<header>
+    <h2>CSS</h2>
+</header>
+<article>
+    <section>
+        <h3>Syntax</h3>
+        <ul>
+            <li>Use soft-tabs with a two space indent. Spaces are the only way to guarantee code renders the same in any person's environment.</li>
+            <li>
+                Put spaces after
+                <code>:</code>
+                in property declarations.
+            </li>
+            <li>
+                Put spaces before
+                <code>{</code>
+                in rule declarations.
+            </li>
+            <li>Put line breaks between rulesets.</li>
+            <li>When grouping selectors, keep individual selectors to a single line.</li>
+            <li>Place closing braces of declaration blocks on a new line.</li>
+            <li>Each declaration should appear on its own line for more accurate error reporting.</li>
+        </ul>
+        <p>Questions on the terms used here? See the <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">syntax section of the Cascading Style Sheets article</a> on Wikipedia.</p>
+    </section>
+    <section class="highlight">
+            <pre><code>
+                /* Bad CSS */
+                .selector, .selector-secondary, .selector[type=text] {
+                padding:15px;
+                margin:0px 0px 15px;
+                background-color:rgba(0, 0, 0, 0.5);
+                box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF
+                }
+
+                /* Good CSS */
+                .selector,
+                .selector-secondary,
+                .selector[type="text"] {
+                padding: 15px;
+                margin-bottom: 15px;
+                background-color: rgba(0,0,0,.5);
+                box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
+                }
+            </code></pre>
+    </section>
+</article>
+<article class="section">
+    <section>
+        <h3>Declaration order</h3>
+        <p>Related property declarations should be grouped together following the order:</p>
+        <ol>
+            <li>Positioning</li>
+            <li>Box model</li>
+            <li>Typographic</li>
+            <li>Visual</li>
+        </ol>
+        <p>Positioning comes first because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.</p>
+        <p>Everything else takes place <em>inside</em> the component or without impacting the previous two sections, and thus they come last.</p>
+        <p>For a complete list of properties and their order, please see.</p>
+    </section>
+    <section class="highlight">
+            <pre><code>
+                .declaration-order {
+                /* Positioning */
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 100;
+
+                /* Box-model */
+                display: block;
+                float: right;
+                width: 100px;
+                height: 100px;
+
+                /* Typography */
+                font: normal 13px "Helvetica Neue", sans-serif;
+                line-height: 1.5;
+                color: #333;
+                text-align: center;
+
+                /* Visual */
+                background-color: #f5f5f5;
+                border: 1px solid #e5e5e5;
+                border-radius: 3px;
+
+                /* Misc */
+                opacity: 1;
+                }
+            </code></pre>
+    </section>
+</article>
+<header>
+    <h2>System</h2>
+</header>
+<article>
+    <section>
+        <header>
+            <h3>Overview</h3>
+        </header>
+        <ul>
+            <li><code>HTML</code> displays as a dynamic font size based on viewport height & width </li>
+            <li><code>Header</code></li>
+            <li><code>Nav</code> items are centered in the <code>li</code> and the amount of tags define the amount of columns</li>
+            <li><code>Main</code></li>
+            <li><code>Article</code> displays as a row</li>
+            <li><code>Section</code> displays as a column (portrait: single column, landscape: multiple column) and the amount of tags define the amount of columns</li>
+            <li><code>Aside</code> displays as 2-column or 3-column</li>
+            <li><code>H1</code>, <code>H2</code>, <code>H3</code> displays as a dynamic font size based on viewport height & width</li>
+            <li>Optional <code>.multi-column</code> layout</li>
+            <li>First <code>Article</code> not in <code>Main</code> is centered on page</li>
+            <li>Sticky <code>Footer</code></li>
+        </ul>
+    </section>
+</article>
+<article>
+    <section>
+        <header>
+            <h3>80/20 Rule: The Pareto Principle</h3>
+            <blockquote>The 80/20 rule asserts that approximately 80 percent of the effects generated by any large system are caused
+                by 20 percent of the variables in that system.</blockquote>
+        </header>
+        <hr />
+        <h3>Portrait</h3>
+        <p>
+            When the orientation is Portrait, content displays as a single column layout
+        </p>
+        <hr />
+        <h3>Landscape</h3>
+        <p>
+            When the orientation is not Portrait, content displays as a grid layout
+        </p>
+        <ul>
+            <li>The amount of [article] tags define the amount of rows</li>
+            <li>The amount of [section] tags define the amount of columns</li>
+            <li>Each [section] displays full-height, even when content does not fill the space</li>
+        </ul>
+        <hr />
+        <h3>.multi-column (optional)</h3>
+        <p>
+            Multi-column takes advantage of the The Pareto Principle and displays your content as either a 2-column or 3-column layout.
+        </p>
+        <ul>
+            <li>One [aside] tag displays 2-column 80/20 layout </li>
+            <li>Two [aside] tags display 3-column 20/60/20 layout </li>
+        </ul>
+    </section>
+    <section class="highlight">
+        <div style="background-color:#303638; padding: 2rem;margin-bottom: 15px; clear: both; overflow: hidden;">
+            <div style="background-color:#CD500D; height: 50px; padding: 0; width: 20%; float: left;">
+            </div>
+            <div style="background-color:#9B3B09; height: 50px; padding: 0; width: 80%;float: right;">
+            </div>
+        </div>
+        <div style="padding-lefT: 0; padding-right: 0;margin-bottom: 15px; float: left;width: 20%;">
+            <p class="text-info">Portrait</p>
+            <div class="window-gui portrait-gui">
+                <section><p>1/6</p></section>
+                <section><p>2/6</p></section>
+                <section><p>3/6</p></section>
+                <section><p>4/6</p></section>
+                <section><p>5/6</p></section>
+                <section><p>6/6</p></section>
+            </div>
+        </div>
+        <div style="padding-lefT: 0; padding-right: 0;margin-bottom: 15px;float: right;width: 60%;">
+            <p class="text-info">Landscape</p>
+            <div class="window-gui landscape-gui">
+                <section><p>1/6</p></section>
+                <section><p>2/6</p></section>
+                <section><p>3/6</p></section>
+                <section><p>4/6</p></section>
+                <section><p>5/6</p></section>
+                <section><p>6/6</p></section>
+            </div>
+        </div>
+        <hr />
+        <div style="padding-lefT: 0; padding-right: 0;margin-bottom: 15px;">
+            <p class="text-info">.multi-column</p>
+            <div class="window-gui multi-column-gui">
+                <section><p>1/6</p></section>
+                <section><p>2/6</p></section>
+                <section><p>3/6</p></section>
+                <section><p>4/6</p></section>
+                <section><p>5/6</p></section>
+                <section><p>6/6</p></section>
+            </div>
+        </div>
+        </div>
+    </section>
+</article>
+<article>
+    <section>
+        <h3>Multi-column</h3>
+    </section>
+</article>
+<article class="multi-column">
+    <header role="contentinfo">
+        <h1>Article Header H1</h1>
+    </header>
+    <section>
+        <section>
+            <h1>Article Section Section H2</h1>
+            <p>
+                One [aside] tag displays 80/20 layout
+            </p>
+            <p>
+                Two [aside] tags display 20/60/20 layout
+            </p>
+        </section>
+        <aside>
+            <h2>Article Section Aside H2</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            </p>
+        </aside>
+    </section>
+    <footer>
+        <h3>Article Footer H3</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cumenatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </p>
+    </footer>
+</article>
+</main>
+<footer>
+    <p>Inspired by the <a href="http://github.com/styleguide">GitHub Styleguide</a></p>
+</footer>
+</body>
 </html>
 
