@@ -167,8 +167,13 @@ footer {
     }
     article {
         flex-direction: column;
-        -webkit-box-orient: vertical;
+        -moz-flex-direction: column;
         -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-box-orient: vertical;
+        -ms-orient: vertical;
     }
     main > article:first-of-type section:first-of-type {
         display: block;
