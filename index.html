@@ -24,7 +24,7 @@ body {
     -ms-flex-direction: column;
     min-width: calc(100vw - 1vw);
     min-height: calc(100vh - 1vh);
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 body > header {
     width:calc(100vw - 1vw);
@@ -105,7 +105,7 @@ article header {
 }
 
 section header {width: auto;}
-article.multi-column footer {width: 100%;}
+article.multi-column footer, article.multi-column header {width: 100%;}
 article.multi-column > section:first-of-type {
     display: -webkit-box;
     display: -moz-box;
@@ -678,31 +678,7 @@ width: 700px;
         <article>
             <p class="text-info">.multi-column</p>
             <section class="window-gui multi-column-gui">
-                <article class="multi-column">
-                    <header role="contentinfo">
-                        <h1>Header</h1>
-                    </header>
-                    <section>
-                        <section>
-                            <h1>Section</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            </p>
-                        </section>
-                        <aside>
-                            <h2>Aside</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            </p>
-                        </aside>
-                    </section>
-                    <footer>
-                        <h3>Footer</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cumenatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        </p>
-                    </footer>
-                </article>
+
             </section>
         </article>
     </section>
