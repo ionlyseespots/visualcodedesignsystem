@@ -99,10 +99,20 @@
             -ms-flex: 1;
             /*padding-right: 1vw;*/
         }
-        article > header { width:calc(100vw - 1vw);}
-        main > header {width:calc(100vw - 3.5vw);}
+        article > header { width: 100vw;}
+
         header, .multi-column header {
             width: auto;
+        }
+
+        footer {
+            width:  auto;
+            padding: .01vw; }
+        .multi-column footer {
+            order: 2;
+            -webkit-order: 2;
+            -moz-order: 2;
+            -ms-order: 2;
         }
         section header {width: auto;}
         article.multi-column > section:first-of-type {
@@ -155,13 +165,7 @@
             -moz-flex: 1;
             -ms-flex: 1;
             flex: 1; }
-        footer {
-            width:  auto;
-            order: 2;
-            -webkit-order: 2;
-            -moz-order: 2;
-            -ms-order: 2;
-            padding: .01vw; }
+
 
         /* defualt single column structure on portrait */
         @media (orientation:portrait){
@@ -182,6 +186,7 @@
                 display: block;
             }
         }
+
 
         /* temporary rules to illustrate layout */
 
