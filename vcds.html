@@ -23,8 +23,7 @@
             -ms-flex-direction: column;
             min-width: calc(100vw - 1vw);
             min-height: calc(100vh - 1vh);
-            overflow-x: hidden;
-        }
+            overflow-x: hidden;}
         body > header {
             width:calc(100vw - 1vw);
             display: -webkit-box;
@@ -97,22 +96,9 @@
             -webkit-flex: 1;
             -moz-flex: 1;
             -ms-flex: 1;
-            /*padding-right: 1vw;*/
-        }
-        article > header { width: 100vw;}
-
-        header, .multi-column header {
-            width: auto;
-        }
-
-        footer {
-            width:  auto;
-            padding: .01vw; }
-        .multi-column footer {
-            order: 2;
-            -webkit-order: 2;
-            -moz-order: 2;
-            -ms-order: 2;
+            padding-right: 1vw; }
+        article header {
+            width:calc(100vw - 1vw);
         }
         section header {width: auto;}
         article.multi-column > section:first-of-type {
@@ -160,33 +146,33 @@
             padding: 0;
             margin: 0; }
         nav ul li {
-            text-align: center;
             -webkit-flex: 1;
+            text-align: center;
             -moz-flex: 1;
             -ms-flex: 1;
             flex: 1; }
+        footer {
+            width:  calc(100vw - 1vw);
+            order: 2;
+            -webkit-order: 2;
+            -moz-order: 2;
+            -ms-order: 2;
+            padding: .01vw; }
 
-
-        /* defualt single column structure on portrait */
+        /* defualt single column strucuture on portrait */
         @media (orientation:portrait){
             html {
                 font-size: 3.5vmin;
             }
             article {
                 flex-direction: column;
-                -moz-flex-direction: column;
-                -webkit-flex-direction: column;
-                -ms-flex-direction: column;
-                box-orient: vertical;
-                -moz-box-orient: vertical;
                 -webkit-box-orient: vertical;
-                -ms-orient: vertical;
+                -webkit-flex-direction: column;
             }
             main > article:first-of-type section:first-of-type {
                 display: block;
             }
         }
-
 
         /* temporary rules to illustrate layout */
 
