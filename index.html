@@ -105,6 +105,7 @@ article header {
 }
 
 section header {width: auto;}
+article.multi-column footer {width: 100%;}
 article.multi-column > section:first-of-type {
     display: -webkit-box;
     display: -moz-box;
@@ -268,14 +269,29 @@ code {
     white-space: pre-wrap;
 }
 
-.portrait-gui {width: 320px;}
+.portrait-gui {width: 320px;        flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;}
 .landscape-gui {
-width: 700px;}
-.multi-column-gui {width: 700px;}
+width: 700px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    width:calc(100vw - 1vw);
+}
+.multi-column-gui {width: 700px; }
+.multi-column-gui p { border: none !important; background-color: transparent !important; text-align: left !important;}
 .window-gui section {padding: 0;}
 .window-gui p {  background-color: #eee;
     border: 1px solid #fff;text-align: center;}
-
+.window-gui article header {padding: 0;}
 
 .multi-column header, .multi-column footer {background-color:#EEEEEE;}
 .multi-column section {background-color:#F4F2F0;}
@@ -637,7 +653,7 @@ width: 700px;}
             <div style="background-color:#9B3B09; height: 50px; padding: 0; width: 80%;float: right;">
             </div>
         </div>
-        <div>
+        <article>
             <p class="text-info">Portrait</p>
             <div class="window-gui portrait-gui">
                 <section><p>1/6</p></section>
@@ -647,8 +663,8 @@ width: 700px;}
                 <section><p>5/6</p></section>
                 <section><p>6/6</p></section>
             </div>
-        </div>
-        <div>
+        </article>
+        <article>
             <p class="text-info">Landscape</p>
             <div class="window-gui landscape-gui">
                 <section><p>1/6</p></section>
@@ -658,19 +674,37 @@ width: 700px;}
                 <section><p>5/6</p></section>
                 <section><p>6/6</p></section>
             </div>
-        </div>
-        <div>
+        </article>
+        <article>
             <p class="text-info">.multi-column</p>
-            <div class="window-gui multi-column-gui">
-                <section><p>1/6</p></section>
-                <section><p>2/6</p></section>
-                <section><p>3/6</p></section>
-                <section><p>4/6</p></section>
-                <section><p>5/6</p></section>
-                <section><p>6/6</p></section>
-            </div>
-        </div>
-        </div>
+            <section class="window-gui multi-column-gui">
+                <article class="multi-column">
+                    <header role="contentinfo">
+                        <h1>Header</h1>
+                    </header>
+                    <section>
+                        <section>
+                            <h1>Section</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            </p>
+                        </section>
+                        <aside>
+                            <h2>Aside</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            </p>
+                        </aside>
+                    </section>
+                    <footer>
+                        <h3>Footer</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cumenatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        </p>
+                    </footer>
+                </article>
+            </section>
+        </article>
     </section>
 </article>
 <article>
