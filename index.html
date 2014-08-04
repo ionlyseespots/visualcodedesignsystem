@@ -98,10 +98,11 @@ main {
     -moz-flex: 1;
     -ms-flex: 1;
     padding-right: 1vw; }
-article header {
+main header {
     width:calc(100vw - 1vw);
 }
-section header {width: auto;}
+
+section header {width: 100%;}
 article.multi-column > section:first-of-type {
     display: -webkit-box;
     display: -moz-box;
@@ -221,12 +222,12 @@ h1, h2, h3, h4 {
 
 
 
-ul, ol {padding-left: 2.5vw;}
+ul, ol {margin-left: 2.5vw;}
 article {border-bottom: 1px solid #e1e1e1;}
-main header { background-color: #F77564;padding: 4vw 0 4vw 2.5vw;}
-article section header, section header { background-color:transparent;padding: 0;}
+main header { background-color: #F77564;padding-top: 4vw; padding-bottom: 4vw;}
+article section header, section header { background-color:transparent;}
 
-section {padding: 2.5vw;}
+section {}
 
 body > header {padding-bottom: 6vw;}
 body > header h1 {margin-top: 6vw;}
