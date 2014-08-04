@@ -24,7 +24,8 @@ body {
     -ms-flex-direction: column;
     min-width: calc(100vw - 1vw);
     min-height: calc(100vh - 1vh);
-    overflow-x: hidden;}
+    overflow-x: hidden;
+}
 body > header {
     width:calc(100vw - 1vw);
     display: -webkit-box;
@@ -254,6 +255,7 @@ pre {
     border-radius: 6px 6px 0 0;
     border-top: 1em solid #999999;
     padding: 0.618em;
+    margin: 15px;
 
 }
 
@@ -266,15 +268,20 @@ code {
     white-space: pre-wrap;
 }
 
-.landscape-gui {    display: flex;}
-.window-gui section {padding: 0;width: auto;}
+.portrait-gui {width: 320px;}
+.landscape-gui {
+width: 700px;}
+.multi-column-gui {width: 700px;}
+.window-gui section {padding: 0;}
 .window-gui p {  background-color: #eee;
     border: 1px solid #fff;text-align: center;}
-.multi-column header, .multi-column footer {background-color:#EEEEEE;padding: 2.5vw 0 2.5vw 2.5vw;}
-.multi-column section {background-color:#F4F2F0;padding: 0;}
-.multi-column section section {background-color:#F7F7F9;padding: 2.5vw;}
-.multi-column aside {background-color: #fff; padding: 2.5vw;}
-.multi-column footer {padding: 2.5vw; ;}
+
+
+.multi-column header, .multi-column footer {background-color:#EEEEEE;}
+.multi-column section {background-color:#F4F2F0;}
+.multi-column section section {background-color:#F7F7F9;}
+.multi-column aside {background-color: #fff; }
+.multi-column footer {}
 .highlight {background-color: #f7f7f9;}
 </style>
 
@@ -630,7 +637,7 @@ code {
             <div style="background-color:#9B3B09; height: 50px; padding: 0; width: 80%;float: right;">
             </div>
         </div>
-        <div style="padding-lefT: 0; padding-right: 0;margin-bottom: 15px; float: left;width: 20%;">
+        <div>
             <p class="text-info">Portrait</p>
             <div class="window-gui portrait-gui">
                 <section><p>1/6</p></section>
@@ -641,7 +648,7 @@ code {
                 <section><p>6/6</p></section>
             </div>
         </div>
-        <div style="padding-lefT: 0; padding-right: 0;margin-bottom: 15px;float: right;width: 60%;">
+        <div>
             <p class="text-info">Landscape</p>
             <div class="window-gui landscape-gui">
                 <section><p>1/6</p></section>
@@ -652,8 +659,7 @@ code {
                 <section><p>6/6</p></section>
             </div>
         </div>
-        <hr />
-        <div style="padding-lefT: 0; padding-right: 0;margin-bottom: 15px;">
+        <div>
             <p class="text-info">.multi-column</p>
             <div class="window-gui multi-column-gui">
                 <section><p>1/6</p></section>
